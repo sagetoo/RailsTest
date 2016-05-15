@@ -1,0 +1,26 @@
+<% if @event.errors.any? %>
+
+  <ul>
+    <li>
+      <% @event.errors.full_messages.each do |msg| %>
+      <%= msg %>
+      <% end %>
+    </li>
+  </ul>
+<% end %>
+
+
+</br>
+<%= f.label :name, "Name: " %>
+<%= f.text_field :name %>
+</br>
+<%= f.label :description, "Description: " %>
+<%= f.text_area :description %>
+</br>
+<%= f.label :birthday, "Birthday: " %>
+<%= f.date_field :birthday %>
+</br>
+<%= f.label :location, "Live in: " %>
+<%= f.text_field :location %>
+</br>
+</br>

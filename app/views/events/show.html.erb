@@ -1,0 +1,22 @@
+<h3 style="color: gray">Name:</h3>
+<%= @event.name %>
+</br>
+</br>
+
+<h3 style="color: gray">Description:</h3>
+<%= simple_format @event.description %>
+</br>
+
+<h3 style="color: gray">Birthday:</h3>
+<%= @event.birthday %>
+</br>
+</br>
+
+<h3 style="color: gray">Live in:</h3>
+<%= @event.location %>
+
+</br>
+</br>
+</br>
+</br>
+<%= link_to "Back to index", events_path %>
