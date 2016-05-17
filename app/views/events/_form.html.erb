@@ -17,10 +17,8 @@
 <%= f.label :description, "Description: " %>
 <%= f.text_area :description %>
 </br>
-<%= f.label :birthday, "Birthday: " %>
+<%= f.label :birthday, "Host Day: " %>
 <%= f.date_field :birthday %>
 </br>
-<%= f.label :location, "Live in: " %>
-<%= f.text_field :location %>
-</br>
+<%= f.collection_select(:category_id, Category.all, :id, :name) %>
 </br>

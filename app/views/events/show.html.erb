@@ -7,15 +7,13 @@
 <%= simple_format @event.description %>
 </br>
 
-<h3 style="color: gray">Birthday:</h3>
+<h3 style="color: gray">Host Day:</h3>
 <%= @event.birthday %>
 </br>
 </br>
+<h3 style="color: gray">Category:</h3>
+<%= @event.category.try(:name) %>
 
-<h3 style="color: gray">Live in:</h3>
-<%= @event.location %>
-
-</br>
 </br>
 </br>
 </br>

@@ -1,4 +1,4 @@
-<h2>People list</h2>
+<h2>Event list</h2>
 
 <% @events.each do |e| %>
 
@@ -8,6 +8,7 @@
       <%= link_to "Show", event_path(e) %>
       <%= link_to "Edit", edit_event_path(e) %>
       <%= link_to "Destroy", event_path(e), :method => :delete %>
+      <%= link_to "Attendees", event_attendees_path(e) %>
     </li>
 
 </ul>
@@ -15,6 +16,6 @@
 <% end %>
 
 <p>
-<%= link_to "New person", new_event_path %>
+<%= link_to "New Event", new_event_path %>
 </p>
 <%= paginate @events %>

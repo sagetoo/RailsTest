@@ -11,7 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160515165903) do
+ActiveRecord::Schema.define(version: 20160516172142) do
+
+  create_table "attendees", force: true do |t|
+    t.string   "name"
+    t.integer  "event_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "event_groupships", force: true do |t|
+    t.integer  "event_id"
+    t.integer  "group_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "events", force: true do |t|
     t.string   "name"
@@ -19,7 +40,22 @@ ActiveRecord::Schema.define(version: 20160515165903) do
     t.date     "birthday"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "location"
+    t.integer  "category_id"
+  end
+
+  add_index "events", ["category_id"], name: "index_events_on_category_id"
+
+  create_table "groups", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "locations", force: true do |t|
+    t.string   "name"
+    t.integer  "event_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
